@@ -1,5 +1,25 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+    // Create a set to store the numbers we have seen
+    const seenNumbers = new Set();
+
+    // Iterate through the array
+    for (const number of array) {
+      // Calculate the complement
+      const complement = target - number;
+  
+      // Check if the complement is in the set
+      if (seenNumbers.has(complement)) {
+        return true;
+      }
+  
+      // Add the current number to the set
+      seenNumbers.add(number);
+    }
+  
+    // If no pairs are found, return false
+    return false;
+  
 }
 
 /* 
